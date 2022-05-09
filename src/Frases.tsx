@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Box, Button, Link } from '@chakra-ui/react';
+import { Box, Flex, Spacer, Button, Link, Icon } from '@chakra-ui/react';
+import { AiFillTwitterCircle } from 'react-icons/ai';
 
 function Frases() {
   const frasesCelebres = [
@@ -408,11 +409,11 @@ function Frases() {
     });
 
   return (
-    <Box id="texto-box" bgColor="orange" color="white">
+    <Box id="texto-box" bgColor="orange" color="white" textAlign="center">
       <Box id="text">{textos.cita}</Box>
-      <Box id="autor">{textos.autor}</Box>
+      <Box id="autor" pt="1" pb="2" >{textos.autor}</Box>
 
-      <Box id="buttons">
+      <Flex id="buttons" justifyContent="center" alignItems="center" gap="4">
         <Link
           id="tweet-texto"
           href={`https://twitter.com/intent/tweet?text= ${textos.cita} ${textos.autor}`}
@@ -420,12 +421,12 @@ function Frases() {
           rel="noopener noreferrer"
           title="Comparte esta frase en tu timeline de Twitter"
         >
-          Icono twitter
+          <Icon as={AiFillTwitterCircle} w={8} h={8} />
         </Link>
-        <Button id="new-texto" onClick={proximaFrase}>
+        <Button id="new-texto" onClick={proximaFrase} bgColor="teal.700" _hover={{bgColor: "green.500"}} >
           Próxima Frase
         </Button>
-      </Box>
+      </Flex>
     </Box>
   );
 }
