@@ -1,6 +1,6 @@
 {
   "name": "usestate",
-  "homepage": "https://gnietto.github.io/usestate/",
+  "homepage": "https://gnietto.github.io/usestate",
   "private": true,
   "main": "index.tsx",
   "version": "0.1.0",
