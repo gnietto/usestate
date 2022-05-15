@@ -23,6 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-src/Calc.tsx
-src/oldCalc.tsx
-src/Previewer.tsx
