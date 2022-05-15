@@ -1,6 +1,7 @@
 // import React from 'react';
 import { Box, Tabs, TabList, Tab, TabPanels, TabPanel } from '@chakra-ui/react';
 import Frases from './Frases';
+import Previewer from './Previewer';
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
             <Frases />
           </TabPanel>
           <TabPanel>Dos</TabPanel>
-          <TabPanel>Tres</TabPanel>
+          <TabPanel>
+            <Previewer />
+          </TabPanel>
         </TabPanels>
       </Tabs>
     </Box>
