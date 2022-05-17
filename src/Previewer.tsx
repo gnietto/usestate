@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
-import { Box, Textarea } from '@chakra-ui/react';
+import { Box, Heading, Textarea } from '@chakra-ui/react';
 
 marked.setOptions({
   breaks: true
@@ -14,20 +14,30 @@ function Previewer() {
     setMarkdown(event.target.value);
   };
 
-  let html = marked.parse(markdown);
+  const html = marked.parse(markdown);
 
   return (
     <Box>
       <Box>
-        <Textarea value={markdown} onChange={onChange} />
+        <Heading as="h4" size="lg" textAlign="center">
+          Markdown
+        </Heading>
+        <Textarea
+          value={markdown}
+          onChange={onChange}
+          placeholder="###### Escribe tu código markdown en este recuadro"
+        />
+        <Heading as="h4" size="lg" mt="1rem" textAlign="center">
+          HTML
+        </Heading>
         <Box
-          minH="sm"
+          h="sm"
           borderRadius="md"
           borderWidth="1px"
           dangerouslySetInnerHTML={{
             __html: DOMPurify.sanitize(html)
           }}
-        ></Box>
+        />
       </Box>
     </Box>
   );
