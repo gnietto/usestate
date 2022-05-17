@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Flex, Spacer, Button, Link, Icon } from '@chakra-ui/react';
+import { Box, Flex, Button, Link, Icon } from '@chakra-ui/react';
 import { AiFillTwitterCircle } from 'react-icons/ai';
 
 function Frases() {
@@ -398,8 +398,8 @@ function Frases() {
   const numeroAleatorio = Math.floor(Math.random() * frasesCelebres.length);
 
   const [textos, setTextos] = useState({
-    cita: frasesCelebres[0].texto,
-    autor: frasesCelebres[0].autor
+    cita: frasesCelebres[4].texto,
+    autor: frasesCelebres[4].autor
   });
 
   const proximaFrase = () =>
@@ -409,9 +409,24 @@ function Frases() {
     });
 
   return (
-    <Box id="texto-box" bgColor="orange" color="white" textAlign="center">
-      <Box id="text">{textos.cita}</Box>
-      <Box id="autor" pt="1" pb="2" >{textos.autor}</Box>
+    <Flex
+      id="texto-box"
+      bgColor="orange"
+      color="white"
+      h="40vh"
+      maxW="780px"
+      my="0"
+      mx="auto"
+      justifyContent="center"
+      alignItems="center"
+      direction="column"
+    >
+      <Box id="text" textAlign="center" mx="1%" fontSize="lg">
+        {textos.cita}
+      </Box>
+      <Box id="autor" my="1rem">
+        {textos.autor}
+      </Box>
 
       <Flex id="buttons" justifyContent="center" alignItems="center" gap="4">
         <Link
@@ -423,11 +438,16 @@ function Frases() {
         >
           <Icon as={AiFillTwitterCircle} w={8} h={8} />
         </Link>
-        <Button id="new-texto" onClick={proximaFrase} bgColor="teal.700" _hover={{bgColor: "green.500"}} >
+        <Button
+          id="new-texto"
+          onClick={proximaFrase}
+          bgColor="teal.700"
+          _hover={{ bgColor: 'green.500' }}
+        >
           Próxima Frase
         </Button>
       </Flex>
-    </Box>
+    </Flex>
   );
 }
 
