@@ -3,6 +3,7 @@ import { Box, Tabs, TabList, Tab, TabPanels, TabPanel } from '@chakra-ui/react';
 import Frases from './Frases';
 import Previewer from './Previewer';
 import Calc from './Calc';
+import FrutaKids from './FrutaKids';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           <Tab>Frases Célebres</Tab>
           <Tab>Calculadora</Tab>
           <Tab>Markdown</Tab>
+          <Tab>FrutaKids</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -22,6 +24,9 @@ function App() {
           </TabPanel>
           <TabPanel>
             <Previewer />
+          </TabPanel>
+          <TabPanel>
+            <FrutaKids />
           </TabPanel>
         </TabPanels>
       </Tabs>
