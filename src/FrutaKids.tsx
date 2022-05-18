@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, Spacer } from '@chakra-ui/react';
 import FrutasAleatorias from './FrutasAleatorias';
 import InfoFrutas from './InfoFrutas';
 import Cajon from './Cajon';
@@ -37,23 +37,23 @@ export default function FrutaKids() {
 
   return (
     <Box>
-      <Flex>
+      <Flex alignItems="center" mx="5vw">
         <FrutasAleatorias
           fruta1={imgplatano}
           fruta2={imgsandia}
           fruta3={imguva}
-          anchoFrutas="10vw"
+          anchoFrutas="12vw"
         />
+        <Spacer />
         <InfoFrutas
           imginterna={incognita}
-          anchoImgInterna="10vw"
-          anchoBox="15vw"
-          altoBox="15vw"
+          anchoImgInterna="12vw"
+          anchoBox="22vw"
+          altoBox="22vw"
           bgImage={cuadro_info}
-          margin="2vw"
         />
       </Flex>
-      <Flex alignItems="center">
+      <Flex alignItems="center" gap="1vw" >
         <Cajon img={cajonFrutas} />
         <Cajon img={mayorQue} anchoImg="10vw" />
         <Cajon img={cajonFrutas} />
