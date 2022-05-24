@@ -25,6 +25,8 @@
     "framer-motion": "^6",
     "marked": "^4.0.15",
     "react": "^17.0.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-touch-backend": "^16.0.1",
     "react-dom": "^17.0.0",
     "react-icons": "^4.3.1",
     "vitest": "^0.9.3"
