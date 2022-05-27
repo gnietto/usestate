@@ -1,6 +1,15 @@
 import { Box, Flex, Image } from '@chakra-ui/react';
+import { useDrag } from 'react-dnd';
+import { dndTypes } from './dndTypes';
 
 export default function FrutasAleatorias(props: any) {
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: dndTypes.FRUTA,
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging()
+    })
+  }));
+
   return (
     <Box>
       <Flex>
@@ -9,12 +18,14 @@ export default function FrutasAleatorias(props: any) {
           w={props.anchoFrutas}
           onClick={props.onClick}
           data-indexfruta={props.dataIndexFruta1}
+          ref={drag}
         />
         <Image
           src={props.fruta2}
           w={props.anchoFrutas}
           onClick={props.onClick}
           data-indexfruta={props.dataIndexFruta2}
+          ref={drag}
         />
       </Flex>
       <Flex justifyContent="center">
@@ -23,6 +34,7 @@ export default function FrutasAleatorias(props: any) {
           w={props.anchoFrutas}
           onClick={props.onClick}
           data-indexfruta={props.dataIndexFruta3}
+          ref={drag}
         />
       </Flex>
     </Box>
