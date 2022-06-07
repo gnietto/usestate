@@ -1,5 +1,5 @@
 {
-  "name": "usestate",
+  "name": "@gnietto/usestate",
   "homepage": "https://gnietto.github.io/usestate/",
   "private": true,
   "main": "index.tsx",
@@ -26,6 +26,7 @@
     "marked": "^4.0.15",
     "react": "^18.0.0",
     "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
     "react-dnd-touch-backend": "^16.0.1",
     "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
